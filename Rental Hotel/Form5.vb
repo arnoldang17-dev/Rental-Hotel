@@ -35,7 +35,7 @@ Public Class Form5
 
         If TextBox1.Text IsNot roomPrice Then
             Label12.Visible = True
-            MsgBox(roomPrice)
+            MsgBox(roomPrice.Length)
         Else
             Label12.Visible = False
         End If
