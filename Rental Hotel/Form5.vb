@@ -33,11 +33,11 @@ Public Class Form5
 
     Private Sub TextBox1_KeyUp(sender As Object, e As KeyEventArgs) Handles TextBox1.KeyUp
 
-        If TextBox1.Text IsNot roomPrice Then
-            Label12.Visible = True
+        If TextBox1.Text = roomPrice Then
+            Label12.Visible = False
             MsgBox(roomPrice.Length)
         Else
-            Label12.Visible = False
+            Label12.Visible = True
         End If
 
     End Sub
