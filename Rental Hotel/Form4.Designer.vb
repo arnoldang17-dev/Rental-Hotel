@@ -155,6 +155,7 @@ Partial Class Form4
         Controls.Add(Panel2)
         Controls.Add(Panel1)
         Name = "Form4"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Form4"
         Panel1.ResumeLayout(False)
         Panel4.ResumeLayout(False)

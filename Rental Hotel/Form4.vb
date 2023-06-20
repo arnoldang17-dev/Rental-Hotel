@@ -19,7 +19,7 @@ Public Class Form4
         imgList.ImageSize = New Size(200, 150)
         imgList.ColorDepth = ColorDepth.Depth32Bit
 
-        For i As Integer = 1 To 14
+        For i As Integer = 1 To 36
             imgList.Images.Add(Image.FromFile("C:\Users\PC\source\repos\Rental Hotel\Rental Hotel\Resources\" & i & ".jpg"))
         Next
 

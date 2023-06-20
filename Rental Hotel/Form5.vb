@@ -35,7 +35,7 @@ Public Class Form5
 
         If TextBox1.Text = roomPrice Then
             Label12.Visible = False
-            MsgBox(roomPrice.Length)
+
         Else
             Label12.Visible = True
         End If
@@ -47,7 +47,10 @@ Public Class Form5
         If (DateTimePicker1.Value > DateTimePicker2.Value) Or (DateTimePicker2.Value < DateTime.Today) Or (DateTimePicker1.Value = DateTimePicker2.Value) Then
             Label16.Visible = True
         Else
-            Label6.Text = (DateTimePicker2.Value - DateTimePicker1.Value).TotalDays * roomPrice
+            Dim dateDifference As TimeSpan = DateTimePicker2.Value.Date - DateTimePicker1.Value.Date
+
+            Label6.Text = (dateDifference.Days * roomPrice).ToString
+            TextBox1.Text = ""
             Label16.Visible = False
 
         End If
@@ -59,8 +62,11 @@ Public Class Form5
         If (DateTimePicker1.Value > DateTimePicker2.Value) Or (DateTimePicker1.Value < DateTime.Today) Or (DateTimePicker1.Value = DateTimePicker2.Value) Then
             Label15.Visible = True
         Else
-            Label6.Text = (DateTimePicker2.Value - DateTimePicker1.Value).TotalDays * roomPrice
-            Label15.Visible = False
+            Dim dateDifference As TimeSpan = DateTimePicker2.Value.Date - DateTimePicker1.Value.Date
+
+            Label6.Text = (dateDifference.Days * roomPrice).ToString
+            TextBox1.Text = ""
+            Label16.Visible = False
 
         End If
 
@@ -76,7 +82,7 @@ Public Class Form5
         Dim value As Integer = random.Next(100000, 999999)
 
 
-        If Label12.Visible Or Label15.Visible Or Label16.Visible Then
+        If Label12.Visible Or Label15.Visible Or Label16.Visible Or ComboBox1.SelectedIndex = -1 Then
             MsgBox("Please fill the Payment correctly.")
         Else
             connect()
@@ -105,14 +111,14 @@ Public Class Form5
             reader6.Close()
 
 
-            Dim query2 As String = "INSERT INTO Reservation VALUES(NULL, '" & userID & "', '" & roomID & "', '" & paymentID & "', '" & DateTimePicker1.Value.ToString("yyyy-MM-dd") & "', '" & DateTimePicker2.Value.ToString("yyyy-MM-dd") & "')"
+            Dim query2 As String = "INSERT INTO Reservation VALUES(NULL, '" & userID & "', '" & roomID & "', '" & paymentID & "', '" & DateTimePicker1.Value.ToString("yyyy-MM-dd") & "', '" & DateTimePicker2.Value.ToString("yyyy-MM-dd") & "', current_timestamp())"
             Dim cmd2 As New MySqlCommand(query2, con)
             Dim reader2 As MySqlDataReader = cmd2.ExecuteReader()
             reader2.Close()
 
             con.Close()
             MessageBox.Show("Room " & roomID & " has been booked.")
-            Me.Hide()
+            Me.Close()
 
 
         End If

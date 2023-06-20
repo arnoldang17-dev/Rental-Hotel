@@ -21,29 +21,28 @@ Public Class Form6
 
         connect()
 
-        Dim query As String = "INSERT INTO Customer VALUES(NULL, '" & TextBox1.Text & "', '" & TextBox2.Text & "',  '" & TextBox5.Text & "', '" & TextBox6.Text & "')"
-        Dim cmd As New MySqlCommand(query, con)
-        Dim reader As MySqlDataReader = cmd.ExecuteReader()
-        reader.Close()
-
-        Dim query1 As String = "Select Customer_ID from Customer where name = '" & TextBox1.Text & "'"
-        Dim cmd1 As New MySqlCommand(query1, con)
-        Dim reader1 As MySqlDataReader = cmd1.ExecuteReader()
-        reader1.Read()
-        Dim customerID As String = reader1("Customer_ID")
-        reader1.Close()
-
-
-        Dim query2 As String = "INSERT INTO user VALUES(NULL, '" & customerID & "', '" & TextBox2.Text & "', '" & TextBox3.Text & "')"
+        Dim query2 As String = "INSERT INTO user VALUES(NULL, '" & TextBox2.Text & "', password('" & TextBox3.Text & "'), 1)"
         Dim cmd2 As New MySqlCommand(query2, con)
         Dim reader2 As MySqlDataReader = cmd2.ExecuteReader()
         reader2.Close()
 
-        con.Close()
+        'get user id
+        Dim query3 As String = "Select user_ID from user where Email = '" & TextBox2.Text & "'"
+        Dim cmd3 As New MySqlCommand(query3, con)
+        Dim reader3 As MySqlDataReader = cmd3.ExecuteReader()
+        reader3.Read()
+        Dim userID As String = reader3("user_ID")
+        reader3.Close()
+
+        Dim query As String = "INSERT INTO Customer VALUES(NULL, '" & userID & "', '" & TextBox1.Text & "', '" & TextBox2.Text & "',  '" & TextBox5.Text & "', '" & TextBox6.Text & "')"
+        Dim cmd As New MySqlCommand(query, con)
+        Dim reader As MySqlDataReader = cmd.ExecuteReader()
+        reader.Close()
+
         MessageBox.Show("Account has been created.")
         Me.Close()
-        Form1.Show()
 
+        Form1.Show()
         con.Close()
 
     End Sub

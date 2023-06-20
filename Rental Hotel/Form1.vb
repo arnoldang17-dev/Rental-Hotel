@@ -3,21 +3,6 @@ Imports MySql.Data.MySqlClient
 
 Public Class Form1
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        ' check if background image is eye.png
-
-        If Panel4.BackgroundImage Is (My.Resources.eye) Then
-
-            Panel4.BackgroundImage = My.Resources.show
-
-        ElseIf Panel4.BackgroundImage Is (My.Resources.show) Then
-
-            Panel4.BackgroundImage = My.Resources.eye
-
-        End If
-
-    End Sub
-
     Private Sub Label4_MouseEnter(sender As Object, e As EventArgs) Handles Label4.MouseEnter
         'set label4 to underlined
         Label4.Font = New Font(Label4.Font, FontStyle.Underline)
@@ -49,15 +34,28 @@ Public Class Form1
 
         connect()
 
-        Dim query As String = "SELECT * FROM user WHERE Email = '" & TextBox1.Text & "' AND password = '" & TextBox2.Text & "'"
+        Dim query As String = "SELECT * FROM user WHERE Email = '" & TextBox1.Text & "' AND password = Password('" & TextBox2.Text & "')"
         Dim cmd As New MySqlCommand(query, con)
         Dim reader As MySqlDataReader = cmd.ExecuteReader()
 
         If reader.Read() Then
-            Dim form4 As New Form4(reader.GetString("user_ID"))
-            form4.Show()
-            con.Close()
-            Me.Hide()
+
+            Dim level As String = reader.GetString("Access_Level_ID")
+
+            If (level = "1") Then
+
+                Dim form4 As New Form4(reader.GetString("user_ID"))
+                form4.Show()
+                con.Close()
+                Me.Hide()
+
+            ElseIf (level = "2") Then
+
+                Form7.Show()
+                con.Close()
+                Me.Hide()
+
+            End If
         Else
             MessageBox.Show("Invalid username or password")
             con.Close()

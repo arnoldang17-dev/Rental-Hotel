@@ -29,14 +29,13 @@ Partial Class Form3
         Label7 = New Label()
         Panel3 = New Panel()
         ListView1 = New ListView()
-        ColumnHeader1 = New ColumnHeader()
-        ColumnHeader2 = New ColumnHeader()
-        ColumnHeader3 = New ColumnHeader()
-        ColumnHeader4 = New ColumnHeader()
-        ImageList1 = New ImageList(components)
         ColumnHeader5 = New ColumnHeader()
+        ColumnHeader1 = New ColumnHeader()
+        ColumnHeader3 = New ColumnHeader()
+        ColumnHeader2 = New ColumnHeader()
+        ColumnHeader4 = New ColumnHeader()
         ColumnHeader6 = New ColumnHeader()
-        ColumnHeader7 = New ColumnHeader()
+        ImageList1 = New ImageList(components)
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         SuspendLayout()
@@ -84,7 +83,7 @@ Partial Class Form3
         ' 
         ' ListView1
         ' 
-        ListView1.Columns.AddRange(New ColumnHeader() {ColumnHeader5, ColumnHeader1, ColumnHeader3, ColumnHeader2, ColumnHeader4, ColumnHeader6, ColumnHeader7})
+        ListView1.Columns.AddRange(New ColumnHeader() {ColumnHeader5, ColumnHeader1, ColumnHeader3, ColumnHeader2, ColumnHeader4, ColumnHeader6})
         ListView1.FullRowSelect = True
         ListView1.Location = New Point(0, 0)
         ListView1.MultiSelect = False
@@ -95,17 +94,16 @@ Partial Class Form3
         ListView1.UseCompatibleStateImageBehavior = False
         ListView1.View = View.Details
         ' 
+        ' ColumnHeader5
+        ' 
+        ColumnHeader5.Text = "Preview"
+        ColumnHeader5.Width = 230
+        ' 
         ' ColumnHeader1
         ' 
         ColumnHeader1.Text = "Reference Number"
         ColumnHeader1.TextAlign = HorizontalAlignment.Center
         ColumnHeader1.Width = 150
-        ' 
-        ' ColumnHeader2
-        ' 
-        ColumnHeader2.Text = "Floor"
-        ColumnHeader2.TextAlign = HorizontalAlignment.Center
-        ColumnHeader2.Width = 50
         ' 
         ' ColumnHeader3
         ' 
@@ -113,10 +111,23 @@ Partial Class Form3
         ColumnHeader3.TextAlign = HorizontalAlignment.Center
         ColumnHeader3.Width = 300
         ' 
+        ' ColumnHeader2
+        ' 
+        ColumnHeader2.Text = "Floor"
+        ColumnHeader2.TextAlign = HorizontalAlignment.Center
+        ColumnHeader2.Width = 75
+        ' 
         ' ColumnHeader4
         ' 
         ColumnHeader4.Text = "Type"
         ColumnHeader4.TextAlign = HorizontalAlignment.Center
+        ColumnHeader4.Width = 100
+        ' 
+        ' ColumnHeader6
+        ' 
+        ColumnHeader6.Text = "Capacity"
+        ColumnHeader6.TextAlign = HorizontalAlignment.Center
+        ColumnHeader6.Width = 100
         ' 
         ' ImageList1
         ' 
@@ -128,20 +139,6 @@ Partial Class Form3
         ImageList1.Images.SetKeyName(2, "marten-bjork-n_IKQDCyrG0-unsplash.jpg")
         ImageList1.Images.SetKeyName(3, "fernando-alvarez-rodriguez-M7GddPqJowg-unsplash.jpg")
         ' 
-        ' ColumnHeader5
-        ' 
-        ColumnHeader5.Text = "Preview"
-        ColumnHeader5.Width = 250
-        ' 
-        ' ColumnHeader6
-        ' 
-        ColumnHeader6.Text = "Capacity"
-        ColumnHeader6.TextAlign = HorizontalAlignment.Center
-        ' 
-        ' ColumnHeader7
-        ' 
-        ColumnHeader7.Text = "Status"
-        ' 
         ' Form3
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -150,6 +147,7 @@ Partial Class Form3
         ControlBox = False
         Controls.Add(Panel1)
         Name = "Form3"
+        StartPosition = FormStartPosition.CenterScreen
         Text = " "
         Panel1.ResumeLayout(False)
         Panel2.ResumeLayout(False)

@@ -12,7 +12,28 @@ Public Class Form3
     End Sub
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         connect()
-        Dim cmd As New MySqlCommand("SELECT r.Room_ID,p.Reference_Number, fr.Floor, r.description, t.Type, r.Capacity, s.Status FROM room r, Type t, Status s, Reservation rs, floor fr, payment p where r.Type_ID = t.Type_ID and r.Status_ID = s.Status_ID and r.Floor_ID = fr.Floor_ID and rs.Room_ID r.Room_ID and rs.Payment_ID = p.Payment_ID and rs.user_ID '" & userID & "'", con)
+
+        Dim query As String = "SELECT r.Room_ID,
+p.Reference_Number,
+r.description,
+fr.Floor,
+t.Type, r.Capacity,
+s.Status 
+FROM room r,
+Type t,
+Status s,
+Reservation rs,
+floor fr,
+payment p,
+user u
+where r.Type_ID = t.Type_ID 
+and r.Status_ID = s.Status_ID 
+and r.Floor_ID = fr.Floor_ID 
+and rs.Room_ID = r.Room_ID 
+and rs.Payment_ID = p.Payment_ID 
+and rs.User_ID = u.User_ID
+and u.user_ID = '" & userID & "'"
+        Dim cmd As New MySqlCommand(query, con)
         Dim da As New MySqlDataAdapter(cmd)
 
         Dim imgList As New ImageList
@@ -38,6 +59,7 @@ Public Class Form3
             item.SubItems.Add(row(3).ToString())
             item.SubItems.Add(row(4).ToString())
             item.SubItems.Add(row(5).ToString())
+            item.SubItems.Add(row(6).ToString())
 
             ListView1.Items.Add(item)
 

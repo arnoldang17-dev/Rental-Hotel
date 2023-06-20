@@ -4,7 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <RootNamespace>Rental_Hotel</RootNamespace>
-    <StartupObject>Rental_Hotel.Form1</StartupObject>
+    <StartupObject>Rental_Hotel.Form9</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
     <PackageIcon></PackageIcon>
