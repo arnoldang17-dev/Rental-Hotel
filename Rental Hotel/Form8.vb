@@ -1,8 +1,5 @@
-﻿Imports Google.Protobuf.WellKnownTypes
-Imports Microsoft.VisualBasic.ApplicationServices
-Imports MySql.Data.MySqlClient
-Imports System.Reflection.Emit
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+﻿Imports MySql.Data.MySqlClient
+
 
 Public Class Form8
     Private roomID As String
