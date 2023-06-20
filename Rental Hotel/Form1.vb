@@ -1,15 +1,21 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar
+Imports MySql.Data.MySqlClient
 
 Public Class Form1
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If TextBox2.UseSystemPasswordChar = True Then
-            TextBox2.UseSystemPasswordChar = False
-            Button1.Text = "Hide"
-        Else
-            TextBox2.UseSystemPasswordChar = True
-            Button1.Text = "Show"
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        ' check if background image is eye.png
+
+        If Panel4.BackgroundImage Is (My.Resources.eye) Then
+
+            Panel4.BackgroundImage = My.Resources.show
+
+        ElseIf Panel4.BackgroundImage Is (My.Resources.show) Then
+
+            Panel4.BackgroundImage = My.Resources.eye
+
         End If
+
     End Sub
 
     Private Sub Label4_MouseEnter(sender As Object, e As EventArgs) Handles Label4.MouseEnter
@@ -34,8 +40,15 @@ Public Class Form1
         Label6.Font = New Font(Label6.Font, FontStyle.Regular)
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+        Form6.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
+
         connect()
+
         Dim query As String = "SELECT * FROM user WHERE Email = '" & TextBox1.Text & "' AND password = '" & TextBox2.Text & "'"
         Dim cmd As New MySqlCommand(query, con)
         Dim reader As MySqlDataReader = cmd.ExecuteReader()
@@ -52,11 +65,34 @@ Public Class Form1
 
         con.Close()
 
+    End Sub
+
+    Private Sub Panel3_Click(sender As Object, e As EventArgs) Handles Panel3.Click
 
     End Sub
 
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-        Form6.Show()
-        Me.Hide()
+    Private Sub Panel4_Click(sender As Object, e As EventArgs) Handles Panel4.Click
+        'set panel4 image to show.png
+        If TextBox2.UseSystemPasswordChar = True Then
+            TextBox2.UseSystemPasswordChar = False
+            Label8.Text = "Hide"
+        Else
+            TextBox2.UseSystemPasswordChar = True
+            Label8.Text = "Show"
+        End If
+
     End Sub
+
+    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
+
+        If TextBox2.UseSystemPasswordChar = True Then
+            TextBox2.UseSystemPasswordChar = False
+            Label8.Text = "Hide"
+        Else
+            TextBox2.UseSystemPasswordChar = True
+            Label8.Text = "Show"
+        End If
+
+    End Sub
+
 End Class

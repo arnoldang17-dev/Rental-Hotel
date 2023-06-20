@@ -12,7 +12,7 @@ Public Class Form3
     End Sub
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         connect()
-        Dim cmd As New MySqlCommand("SELECT r.Room_ID, r.description, t.Type, r.Price, r.Capacity, s.Status FROM room r, Type t, Status s, Reservation rs where r.Type_ID = t.Type_ID and r.Status_ID = s.Status_ID and rs.user_ID = '" & userID & "' and rs.Room_ID = r.Room_ID", con)
+        Dim cmd As New MySqlCommand("SELECT r.Room_ID,p.Reference_Number, fr.Floor, r.description, t.Type, r.Capacity, s.Status FROM room r, Type t, Status s, Reservation rs, floor fr, payment p where r.Type_ID = t.Type_ID and r.Status_ID = s.Status_ID and r.Floor_ID = fr.Floor_ID and rs.Room_ID r.Room_ID and rs.Payment_ID = p.Payment_ID and rs.user_ID '" & userID & "'", con)
         Dim da As New MySqlDataAdapter(cmd)
 
         Dim imgList As New ImageList
@@ -30,21 +30,23 @@ Public Class Form3
 
         For Each row As DataRow In dt.Rows
 
-
-
             Dim item As New ListViewItem(row(0).ToString()) With {
                         .ImageIndex = Val(row(0).ToString()) - 1
                         }
             item.SubItems.Add(row(1).ToString())
-                item.SubItems.Add(row(2).ToString())
-                item.SubItems.Add(row(3).ToString())
-                item.SubItems.Add(row(4).ToString())
-                item.SubItems.Add(row(5).ToString())
+            item.SubItems.Add(row(2).ToString())
+            item.SubItems.Add(row(3).ToString())
+            item.SubItems.Add(row(4).ToString())
+            item.SubItems.Add(row(5).ToString())
 
             ListView1.Items.Add(item)
 
             con.Close()
 
         Next
+    End Sub
+
+    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
+        Me.Close()
     End Sub
 End Class

@@ -68,7 +68,14 @@ Public Class Form4
         form5.Show()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Form6.Show()
+    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
+        Dim form3 As New Form3(userID)
+        form3.Show()
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+        'close the form
+        Me.Close()
+        Form1.Show()
     End Sub
 End Class
