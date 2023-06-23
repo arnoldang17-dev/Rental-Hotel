@@ -30,9 +30,12 @@ Partial Class Form7
         ColumnHeader3 = New ColumnHeader()
         ColumnHeader4 = New ColumnHeader()
         Panel1 = New Panel()
+        Panel2 = New Panel()
+        Label2 = New Label()
         Panel4 = New Panel()
         Label1 = New Label()
         Panel1.SuspendLayout()
+        Panel2.SuspendLayout()
         Panel4.SuspendLayout()
         SuspendLayout()
         ' 
@@ -41,9 +44,10 @@ Partial Class Form7
         ListView1.Columns.AddRange(New ColumnHeader() {ColumnHeader1, ColumnHeader2, ColumnHeader5, ColumnHeader6, ColumnHeader3, ColumnHeader4})
         ListView1.FullRowSelect = True
         ListView1.Location = New Point(2, 1)
+        ListView1.Margin = New Padding(3, 4, 3, 4)
         ListView1.MultiSelect = False
         ListView1.Name = "ListView1"
-        ListView1.Size = New Size(1055, 640)
+        ListView1.Size = New Size(1205, 852)
         ListView1.TabIndex = 2
         ListView1.UseCompatibleStateImageBehavior = False
         ListView1.View = View.Details
@@ -87,19 +91,43 @@ Partial Class Form7
         Panel1.BackColor = Color.Indigo
         Panel1.BackgroundImage = My.Resources.Resources.pxfuel__1_
         Panel1.BackgroundImageLayout = ImageLayout.None
+        Panel1.Controls.Add(Panel2)
         Panel1.Controls.Add(Panel4)
-        Panel1.Location = New Point(2, 639)
+        Panel1.Location = New Point(2, 852)
+        Panel1.Margin = New Padding(3, 4, 3, 4)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1055, 126)
+        Panel1.Size = New Size(1206, 168)
         Panel1.TabIndex = 3
+        ' 
+        ' Panel2
+        ' 
+        Panel2.BorderStyle = BorderStyle.FixedSingle
+        Panel2.Controls.Add(Label2)
+        Panel2.Location = New Point(78, 59)
+        Panel2.Margin = New Padding(3, 4, 3, 4)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(189, 54)
+        Panel2.TabIndex = 14
+        ' 
+        ' Label2
+        ' 
+        Label2.BackColor = Color.WhiteSmoke
+        Label2.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label2.Location = New Point(-1, 0)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(190, 52)
+        Label2.TabIndex = 0
+        Label2.Text = "Show Customers"
+        Label2.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Panel4
         ' 
         Panel4.BorderStyle = BorderStyle.FixedSingle
         Panel4.Controls.Add(Label1)
-        Panel4.Location = New Point(869, 44)
+        Panel4.Location = New Point(993, 59)
+        Panel4.Margin = New Padding(3, 4, 3, 4)
         Panel4.Name = "Panel4"
-        Panel4.Size = New Size(166, 41)
+        Panel4.Size = New Size(189, 54)
         Panel4.TabIndex = 13
         ' 
         ' Label1
@@ -108,21 +136,23 @@ Partial Class Form7
         Label1.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         Label1.Location = New Point(-1, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(166, 39)
+        Label1.Size = New Size(190, 52)
         Label1.TabIndex = 0
         Label1.Text = "Logout"
         Label1.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Form7
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1058, 762)
+        ClientSize = New Size(1209, 1016)
         Controls.Add(Panel1)
         Controls.Add(ListView1)
+        Margin = New Padding(3, 4, 3, 4)
         Name = "Form7"
         StartPosition = FormStartPosition.CenterScreen
         Panel1.ResumeLayout(False)
+        Panel2.ResumeLayout(False)
         Panel4.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
@@ -137,4 +167,6 @@ Partial Class Form7
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Label1 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label2 As Label
 End Class

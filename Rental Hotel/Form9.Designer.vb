@@ -36,8 +36,9 @@ Partial Class Form9
         PictureBox1.BackgroundImage = My.Resources.Resources.fernando_alvarez_rodriguez_M7GddPqJowg_unsplash
         PictureBox1.BackgroundImageLayout = ImageLayout.Stretch
         PictureBox1.Location = New Point(-1, 0)
+        PictureBox1.Margin = New Padding(3, 4, 3, 4)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(1277, 723)
+        PictureBox1.Size = New Size(1459, 964)
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
         ' 
@@ -45,38 +46,41 @@ Partial Class Form9
         ' 
         Panel1.BackgroundImage = My.Resources.Resources.pxfuel__1_
         Panel1.Controls.Add(Panel2)
-        Panel1.Location = New Point(-1, 720)
+        Panel1.Location = New Point(-1, 960)
+        Panel1.Margin = New Padding(3, 4, 3, 4)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1277, 135)
+        Panel1.Size = New Size(1459, 180)
         Panel1.TabIndex = 1
         ' 
         ' Panel2
         ' 
         Panel2.Controls.Add(Label1)
-        Panel2.Location = New Point(1027, 43)
+        Panel2.Location = New Point(1174, 57)
+        Panel2.Margin = New Padding(3, 4, 3, 4)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(200, 58)
+        Panel2.Size = New Size(229, 77)
         Panel2.TabIndex = 0
         ' 
         ' Label1
         ' 
-        Label1.BackColor = SystemColors.AppWorkspace
-        Label1.Font = New Font("Segoe UI", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        Label1.BackColor = Color.Transparent
+        Label1.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         Label1.ForeColor = SystemColors.ControlText
-        Label1.Location = New Point(15, 0)
+        Label1.Location = New Point(17, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(167, 58)
+        Label1.Size = New Size(191, 77)
         Label1.TabIndex = 0
         Label1.Text = "Book a Room"
         Label1.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Form9
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1275, 855)
+        ClientSize = New Size(1457, 1055)
         Controls.Add(Panel1)
         Controls.Add(PictureBox1)
+        Margin = New Padding(3, 4, 3, 4)
         Name = "Form9"
         StartPosition = FormStartPosition.CenterScreen
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()

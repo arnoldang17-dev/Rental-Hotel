@@ -26,7 +26,11 @@ Partial Class Form8
         Panel5 = New Panel()
         Panel2 = New Panel()
         Panel4 = New Panel()
+        Label2 = New Label()
         Panel3 = New Panel()
+        Label5 = New Label()
+        TextBox1 = New TextBox()
+        Label4 = New Label()
         TextBox4 = New TextBox()
         TextBox2 = New TextBox()
         Panel7 = New Panel()
@@ -37,7 +41,6 @@ Partial Class Form8
         Label9 = New Label()
         Label3 = New Label()
         Label1 = New Label()
-        Label2 = New Label()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         Panel4.SuspendLayout()
@@ -53,17 +56,19 @@ Partial Class Form8
         Panel1.BackgroundImageLayout = ImageLayout.Stretch
         Panel1.Controls.Add(Panel5)
         Panel1.Controls.Add(Panel2)
-        Panel1.Location = New Point(-15, -26)
+        Panel1.Location = New Point(-17, -35)
+        Panel1.Margin = New Padding(3, 4, 3, 4)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(825, 575)
+        Panel1.Size = New Size(943, 767)
         Panel1.TabIndex = 1
         ' 
         ' Panel5
         ' 
         Panel5.BackColor = Color.Purple
-        Panel5.Location = New Point(75, 541)
+        Panel5.Location = New Point(86, 721)
+        Panel5.Margin = New Padding(3, 4, 3, 4)
         Panel5.Name = "Panel5"
-        Panel5.Size = New Size(663, 10)
+        Panel5.Size = New Size(758, 13)
         Panel5.TabIndex = 19
         ' 
         ' Panel2
@@ -71,9 +76,10 @@ Partial Class Form8
         Panel2.BackColor = Color.White
         Panel2.Controls.Add(Panel4)
         Panel2.Controls.Add(Panel3)
-        Panel2.Location = New Point(75, 40)
+        Panel2.Location = New Point(86, 53)
+        Panel2.Margin = New Padding(3, 4, 3, 4)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(664, 522)
+        Panel2.Size = New Size(759, 696)
         Panel2.TabIndex = 1
         ' 
         ' Panel4
@@ -81,14 +87,30 @@ Partial Class Form8
         Panel4.BackColor = Color.Transparent
         Panel4.BackgroundImage = My.Resources.Resources.pxfuel__1_
         Panel4.Controls.Add(Label2)
-        Panel4.Location = New Point(13, 12)
+        Panel4.Location = New Point(15, 16)
+        Panel4.Margin = New Padding(3, 4, 3, 4)
         Panel4.Name = "Panel4"
-        Panel4.Size = New Size(634, 75)
+        Panel4.Size = New Size(725, 100)
         Panel4.TabIndex = 18
+        ' 
+        ' Label2
+        ' 
+        Label2.BackColor = Color.Transparent
+        Label2.Font = New Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point)
+        Label2.ForeColor = Color.White
+        Label2.Location = New Point(226, 15)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(302, 71)
+        Label2.TabIndex = 1
+        Label2.Text = "Change Labels"
+        Label2.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Panel3
         ' 
         Panel3.BorderStyle = BorderStyle.FixedSingle
+        Panel3.Controls.Add(Label5)
+        Panel3.Controls.Add(TextBox1)
+        Panel3.Controls.Add(Label4)
         Panel3.Controls.Add(TextBox4)
         Panel3.Controls.Add(TextBox2)
         Panel3.Controls.Add(Panel7)
@@ -97,34 +119,68 @@ Partial Class Form8
         Panel3.Controls.Add(Label9)
         Panel3.Controls.Add(Label3)
         Panel3.Controls.Add(Label1)
-        Panel3.Location = New Point(13, 93)
+        Panel3.Location = New Point(15, 124)
+        Panel3.Margin = New Padding(3, 4, 3, 4)
         Panel3.Name = "Panel3"
-        Panel3.Size = New Size(634, 399)
+        Panel3.Size = New Size(724, 531)
         Panel3.TabIndex = 17
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.BackColor = Color.Transparent
+        Label5.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        Label5.Location = New Point(205, 143)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(310, 20)
+        Label5.TabIndex = 30
+        Label5.Text = "1 for open, 3 for Maintenance, 6 for Occupied"
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.BorderStyle = BorderStyle.FixedSingle
+        TextBox1.Location = New Point(308, 171)
+        TextBox1.Margin = New Padding(3, 4, 3, 4)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(130, 27)
+        TextBox1.TabIndex = 29
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Label4.Location = New Point(172, 170)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(113, 28)
+        Label4.TabIndex = 28
+        Label4.Text = "Set Status :"
         ' 
         ' TextBox4
         ' 
         TextBox4.BorderStyle = BorderStyle.FixedSingle
-        TextBox4.Location = New Point(458, 205)
+        TextBox4.Location = New Point(523, 273)
+        TextBox4.Margin = New Padding(3, 4, 3, 4)
         TextBox4.Name = "TextBox4"
-        TextBox4.Size = New Size(114, 23)
+        TextBox4.Size = New Size(130, 27)
         TextBox4.TabIndex = 27
         ' 
         ' TextBox2
         ' 
         TextBox2.BorderStyle = BorderStyle.FixedSingle
-        TextBox2.Location = New Point(146, 205)
+        TextBox2.Location = New Point(167, 273)
+        TextBox2.Margin = New Padding(3, 4, 3, 4)
         TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(114, 23)
+        TextBox2.Size = New Size(130, 27)
         TextBox2.TabIndex = 24
         ' 
         ' Panel7
         ' 
         Panel7.BorderStyle = BorderStyle.FixedSingle
         Panel7.Controls.Add(Label18)
-        Panel7.Location = New Point(42, 330)
+        Panel7.Location = New Point(48, 440)
+        Panel7.Margin = New Padding(3, 4, 3, 4)
         Panel7.Name = "Panel7"
-        Panel7.Size = New Size(123, 25)
+        Panel7.Size = New Size(140, 33)
         Panel7.TabIndex = 23
         ' 
         ' Label18
@@ -133,7 +189,7 @@ Partial Class Form8
         Label18.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         Label18.Location = New Point(-1, 0)
         Label18.Name = "Label18"
-        Label18.Size = New Size(121, 23)
+        Label18.Size = New Size(138, 31)
         Label18.TabIndex = 0
         Label18.Text = "Change"
         Label18.TextAlign = ContentAlignment.MiddleCenter
@@ -142,9 +198,10 @@ Partial Class Form8
         ' 
         Panel6.BorderStyle = BorderStyle.FixedSingle
         Panel6.Controls.Add(Label17)
-        Panel6.Location = New Point(458, 331)
+        Panel6.Location = New Point(523, 441)
+        Panel6.Margin = New Padding(3, 4, 3, 4)
         Panel6.Name = "Panel6"
-        Panel6.Size = New Size(123, 25)
+        Panel6.Size = New Size(140, 33)
         Panel6.TabIndex = 22
         ' 
         ' Label17
@@ -153,7 +210,7 @@ Partial Class Form8
         Label17.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         Label17.Location = New Point(-1, 0)
         Label17.Name = "Label17"
-        Label17.Size = New Size(121, 23)
+        Label17.Size = New Size(138, 31)
         Label17.TabIndex = 0
         Label17.Text = "Cancel"
         Label17.TextAlign = ContentAlignment.MiddleCenter
@@ -162,9 +219,9 @@ Partial Class Form8
         ' 
         Label7.AutoSize = True
         Label7.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Label7.Location = New Point(23, 207)
+        Label7.Location = New Point(26, 276)
         Label7.Name = "Label7"
-        Label7.Size = New Size(117, 21)
+        Label7.Size = New Size(145, 28)
         Label7.TabIndex = 6
         Label7.Text = "New Capacity :"
         ' 
@@ -172,9 +229,9 @@ Partial Class Form8
         ' 
         Label9.AutoSize = True
         Label9.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Label9.Location = New Point(299, 207)
+        Label9.Location = New Point(342, 276)
         Label9.Name = "Label9"
-        Label9.Size = New Size(139, 21)
+        Label9.Size = New Size(173, 28)
         Label9.TabIndex = 8
         Label9.Text = "New Price/Night :"
         ' 
@@ -182,9 +239,9 @@ Partial Class Form8
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Label3.Location = New Point(213, 86)
+        Label3.Location = New Point(243, 115)
         Label3.Name = "Label3"
-        Label3.Size = New Size(82, 21)
+        Label3.Size = New Size(102, 28)
         Label3.TabIndex = 2
         Label3.Text = "Room ID :"
         ' 
@@ -192,31 +249,20 @@ Partial Class Form8
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label1.Location = New Point(323, 86)
+        Label1.Location = New Point(369, 115)
         Label1.Name = "Label1"
-        Label1.Size = New Size(56, 21)
+        Label1.Size = New Size(69, 28)
         Label1.TabIndex = 0
         Label1.Text = "Label1"
         ' 
-        ' Label2
-        ' 
-        Label2.BackColor = Color.Transparent
-        Label2.Font = New Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point)
-        Label2.ForeColor = Color.White
-        Label2.Location = New Point(198, 11)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(264, 53)
-        Label2.TabIndex = 1
-        Label2.Text = "Change Labels"
-        Label2.TextAlign = ContentAlignment.MiddleCenter
-        ' 
         ' Form8
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(794, 522)
+        ClientSize = New Size(907, 696)
         ControlBox = False
         Controls.Add(Panel1)
+        Margin = New Padding(3, 4, 3, 4)
         Name = "Form8"
         ShowInTaskbar = False
         StartPosition = FormStartPosition.CenterScreen
@@ -248,4 +294,7 @@ Partial Class Form8
     Friend WithEvents Label18 As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
 End Class

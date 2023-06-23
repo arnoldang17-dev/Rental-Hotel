@@ -6,6 +6,7 @@ Public Class Form7
     Private Sub Form7_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         con.Close()
         connect()
+
         Dim cmd As New MySqlCommand("SELECT r.Room_ID, r.description, t.Type, r.Price, r.Capacity, s.Status FROM room r, Type t, Status s where r.Type_ID = t.Type_ID and r.Status_ID = s.Status_ID", con)
         Dim da As New MySqlDataAdapter(cmd)
 
@@ -14,7 +15,7 @@ Public Class Form7
         imgList.ColorDepth = ColorDepth.Depth32Bit
 
         For i As Integer = 1 To 36
-            imgList.Images.Add(Image.FromFile("C:\Users\PC\source\repos\Rental Hotel\Rental Hotel\Resources\" & i & ".jpg"))
+            imgList.Images.Add(Image.FromFile("C:\Users\arnol\source\repos\arnoldang17-dev\Rental-Hotel\Rental Hotel\Resources\" & i & ".jpg"))
         Next
 
         ListView1.SmallImageList = imgList
@@ -58,5 +59,9 @@ Public Class Form7
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
         Me.Close()
         Form1.Show()
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+        Form10.Show()
     End Sub
 End Class

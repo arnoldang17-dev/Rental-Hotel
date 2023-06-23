@@ -19,12 +19,24 @@ Public Class Form8
         TextBox4.Text = roomPrice
         TextBox2.Text = roomCapacity
 
+        connect()
+        'select room status from room
+        Dim query As String = "SELECT Status_ID FROM room WHERE room_ID = '" & roomID & "'"
+        Dim cmd As New MySqlCommand(query, con)
+        Dim reader As MySqlDataReader = cmd.ExecuteReader()
+        reader.Read()
+        Dim status As String = reader("Status_ID")
+        reader.Close()
+        TextBox1.Text = status
+
+        con.Close()
+
     End Sub
 
     Private Sub Label18_Click(sender As Object, e As EventArgs) Handles Label18.Click
 
         connect()
-        Dim query As String = "UPDATE room set Capacity = '" & TextBox2.Text & "', Price = '" & TextBox4.Text & "' WHERE room_ID = '" & roomID & "'"
+        Dim query As String = "UPDATE room set Capacity = '" & TextBox2.Text & "', Price = '" & TextBox4.Text & "', Status_ID = '" & TextBox1.Text & "' WHERE room_ID = '" & roomID & "'"
         Dim cmd As New MySqlCommand(query, con)
         Dim reader As MySqlDataReader = cmd.ExecuteReader()
         reader.Close()

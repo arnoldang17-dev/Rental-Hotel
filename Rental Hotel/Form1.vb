@@ -92,4 +92,14 @@ Public Class Form1
 
     End Sub
 
+    Private Sub Label7_MouseEnter(sender As Object, e As EventArgs) Handles Label7.MouseEnter
+        Label7.BackColor = Color.DarkGray
+
+    End Sub
+
+    Private Sub Label7_MouseLeave(sender As Object, e As EventArgs) Handles Label7.MouseLeave
+
+        Label7.BackColor = Color.Transparent
+
+    End Sub
 End Class

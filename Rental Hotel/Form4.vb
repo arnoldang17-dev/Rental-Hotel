@@ -20,7 +20,7 @@ Public Class Form4
         imgList.ColorDepth = ColorDepth.Depth32Bit
 
         For i As Integer = 1 To 36
-            imgList.Images.Add(Image.FromFile("C:\Users\PC\source\repos\Rental Hotel\Rental Hotel\Resources\" & i & ".jpg"))
+            imgList.Images.Add(Image.FromFile("C:\Users\arnol\source\repos\arnoldang17-dev\Rental-Hotel\Rental Hotel\Resources\" & i & ".jpg"))
         Next
 
         ListView1.SmallImageList = imgList
@@ -66,11 +66,13 @@ Public Class Form4
 
         Dim form5 As New Form5(roomID, roomType, roomPrice, roomCapacity, roomStatus, userID)
         form5.Show()
+        Me.Close()
     End Sub
 
     Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
         Dim form3 As New Form3(userID)
         form3.Show()
+        Me.Close()
     End Sub
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click

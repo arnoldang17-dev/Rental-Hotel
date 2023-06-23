@@ -49,17 +49,19 @@ Partial Class Form4
         Panel1.Controls.Add(Panel4)
         Panel1.Controls.Add(Panel3)
         Panel1.Location = New Point(2, 1)
+        Panel1.Margin = New Padding(3, 4, 3, 4)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(243, 756)
+        Panel1.Size = New Size(278, 1008)
         Panel1.TabIndex = 0
         ' 
         ' Panel4
         ' 
         Panel4.BorderStyle = BorderStyle.FixedSingle
         Panel4.Controls.Add(Label1)
-        Panel4.Location = New Point(34, 686)
+        Panel4.Location = New Point(39, 915)
+        Panel4.Margin = New Padding(3, 4, 3, 4)
         Panel4.Name = "Panel4"
-        Panel4.Size = New Size(166, 41)
+        Panel4.Size = New Size(189, 54)
         Panel4.TabIndex = 13
         ' 
         ' Label1
@@ -68,7 +70,7 @@ Partial Class Form4
         Label1.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         Label1.Location = New Point(-1, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(166, 39)
+        Label1.Size = New Size(190, 52)
         Label1.TabIndex = 0
         Label1.Text = "Logout"
         Label1.TextAlign = ContentAlignment.MiddleCenter
@@ -77,9 +79,10 @@ Partial Class Form4
         ' 
         Panel3.BorderStyle = BorderStyle.FixedSingle
         Panel3.Controls.Add(Label7)
-        Panel3.Location = New Point(34, 100)
+        Panel3.Location = New Point(39, 133)
+        Panel3.Margin = New Padding(3, 4, 3, 4)
         Panel3.Name = "Panel3"
-        Panel3.Size = New Size(166, 41)
+        Panel3.Size = New Size(189, 54)
         Panel3.TabIndex = 12
         ' 
         ' Label7
@@ -88,7 +91,7 @@ Partial Class Form4
         Label7.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         Label7.Location = New Point(-1, 0)
         Label7.Name = "Label7"
-        Label7.Size = New Size(166, 39)
+        Label7.Size = New Size(190, 52)
         Label7.TabIndex = 0
         Label7.Text = "History"
         Label7.TextAlign = ContentAlignment.MiddleCenter
@@ -96,9 +99,10 @@ Partial Class Form4
         ' Panel2
         ' 
         Panel2.Controls.Add(ListView1)
-        Panel2.Location = New Point(248, 1)
+        Panel2.Location = New Point(283, 1)
+        Panel2.Margin = New Padding(3, 4, 3, 4)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(890, 759)
+        Panel2.Size = New Size(1017, 1012)
         Panel2.TabIndex = 1
         ' 
         ' ListView1
@@ -106,9 +110,10 @@ Partial Class Form4
         ListView1.Columns.AddRange(New ColumnHeader() {ColumnHeader1, ColumnHeader2, ColumnHeader5, ColumnHeader6, ColumnHeader3, ColumnHeader4})
         ListView1.FullRowSelect = True
         ListView1.Location = New Point(0, 0)
+        ListView1.Margin = New Padding(3, 4, 3, 4)
         ListView1.MultiSelect = False
         ListView1.Name = "ListView1"
-        ListView1.Size = New Size(890, 759)
+        ListView1.Size = New Size(1017, 1011)
         ListView1.TabIndex = 1
         ListView1.UseCompatibleStateImageBehavior = False
         ListView1.View = View.Details
@@ -149,14 +154,14 @@ Partial Class Form4
         ' 
         ' Form4
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1140, 761)
+        ClientSize = New Size(1303, 1015)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
+        Margin = New Padding(3, 4, 3, 4)
         Name = "Form4"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Form4"
         Panel1.ResumeLayout(False)
         Panel4.ResumeLayout(False)
         Panel3.ResumeLayout(False)
